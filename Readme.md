@@ -26,8 +26,10 @@ var options = {
 
 var putter = new Putter(options);
 
-// put arguments: base64 string, object key, mime type, permissions
-putter.put(base64data, 'images/success.jpg', 'image/jpeg', 'public-read');
+// put arguments: base64 string, object key, mime type, permissions, callback
+putter.put(base64data, 'images/success.jpg', 'image/jpeg', 'public-read', function(res) {
+  console.log('do something with response', res)
+});
 
 putter.on('progress', function (data) {
     console.log('progress', data);
